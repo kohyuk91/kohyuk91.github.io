@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.62.2" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Poly Image Plane - ZLOC Part 1 &middot; Hyuk Ko</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="/"><h1>Hyuk Ko</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="/">Home</a> </li>
+        <li><a href="/about/"> About </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Poly Image Plane - ZLOC Part 1</h1>
+  <time datetime=0001-01-01T00:00:00Z class="post-date">Mon, Jan 1, 0001</time>
+  <ul>
+<li>
+<p>An Image Plane is just a “Reflection” of a camera’s Film Back.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_intro.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<p>We can figure out the Image Plane’s width and height by using some simple math.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_width_formula.png" alt="">
+<img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_height_formula.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="lets-make-a-poly-image-plane-by-using-this-formula">Lets make a Poly Image Plane by using this formula.</h2>
+<ul>
+<li>
+<p>First, create a camera. We will be using it’s default settings.</p>
+</li>
+<li>
+<pre><code>Focal Length(mm): 35
+Horizontal Film Aperture(inch): 1.417
+Vertical Film Aperture(inch): 0.945
+</code></pre></li>
+<li>
+<p>Next, create an image plane, and set the depth to 35.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_maya_camera.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<p>Now create a Poly Plane and rotate it 90 degrees in the X AXIS and FREEZE it.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_maya_create_polyplane.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<p>And move the Poly Plane by -35 in the Z AXIS.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_maya_move_polyplane.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="finally-here-comes-the-fun-part-expressions">Finally here comes the fun part, Expressions!</h2>
+<ul>
+<li>
+<p>Open the Expression Editor, copy and paste the code below, and hit the create button.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_maya_expression.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<pre><code>pPlane1.sx = cameraShape1.hfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1;
+pPlane1.sy = cameraShape1.vfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1;
+</code></pre></li>
+<li>
+<p>Viola! The Poly Plane matches the shape of the Image Plane. Play around with the Poly Plane’s TranslateZ attribute to see how it mimics the Image Plane’s Depth attribute.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_maya_expression_result.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<p>And if you want the Poly Plane to follow the camera’s translations, just group the Poly Plane, and parent constraint the group to the camera.</p>
+<blockquote>
+<p><img src="20200131_poly_image_plane_zloc_part1/poly_image_plane_maya_expression_result_parentconstraint.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="thank-you-for-reading">Thank you for reading.</h4>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/20200131_poly_image_plane_zloc_part1/</loc>
+    <loc>/about/</loc>
   </url>
   
   <url>
@@ -15,7 +15,11 @@
   </url>
   
   <url>
-    <loc>/20200131_poly_image_plane_zloc_part1/20200131_poly_image_plane_zloc_part1/</loc>
+    <loc>/posts/20200131_poly_image_plane_zloc_part1/</loc>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
   </url>
   
   <url>
