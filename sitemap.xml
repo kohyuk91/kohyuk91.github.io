@@ -3,23 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
+    <loc>/posts/20200131_two_point_five_dee_locator_zloc_part2/</loc>
+    <lastmod>2020-01-01T00:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/about/</loc>
+    <lastmod>2020-01-01T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-01-01T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/20200131_poly_image_plane_zloc_part1/</loc>
+    <lastmod>2020-01-01T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
+    <lastmod>2020-01-01T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
   </url>
   
   <url>
