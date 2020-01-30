@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Social  GitHub LinkedIn  </description>
+      <description>Matchmove Reel   Social  GitHub LinkedIn  </description>
     </item>
     
     <item>
@@ -25,8 +25,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/posts/20200131_poly_image_plane_zloc_part1/</guid>
-      <description>An Image Plane is just a “Reflection” of a camera’s Film Back.   We can figure out the Image Plane’s width and height by using some simple math.     Lets make a Poly Image Plane by using this formula.   First, create a camera. We will be using it’s default settings.
-  Focal Length(mm): 35 Horizontal Film Aperture(inch): 1.417 Vertical Film Aperture(inch): 0.945   Next, create an image plane, and set the depth to 35.</description>
+      <description>An Image Plane is just a “Reflection” of a camera’s Film Back.
+    We can figure out the Image Plane’s width and height by using some simple math.
+    Lets make a Poly Image Plane by using this formula.   First, create a camera. We will be using it’s default settings.
+  Focal Length(mm): 35 Horizontal Film Aperture(inch): 1.417 Vertical Film Aperture(inch): 0.</description>
     </item>
     
   </channel>
