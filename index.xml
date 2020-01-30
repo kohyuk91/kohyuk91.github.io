@@ -6,40 +6,40 @@
     <description>Recent content on Hyuk Ko</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Dec 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2.5D Locator - ZLOC Part 2</title>
-      <link>/posts/20200131_two_point_five_dee_locator_zloc_part2/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0900</pubDate>
+      <link>/posts/20191215_two_point_five_dee_locator_zloc_part2/</link>
+      <pubDate>Sun, 15 Dec 2019 00:00:00 +0900</pubDate>
       
-      <guid>/posts/20200131_two_point_five_dee_locator_zloc_part2/</guid>
+      <guid>/posts/20191215_two_point_five_dee_locator_zloc_part2/</guid>
       <description>Let’s pick up from where we left off. We have used some fancy expressions to create an image plane. But if we tweak this expression just a little bit we can create a 2.5D Locator from scratch!     First let’s edit the expression.   Instead of manipulating the ScaleX and ScaleY attributes, pipe the same formula to the TranslateX and TranslateY attributes like this…
   [Before] pPlane1.</description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0900</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Matchmove Reel   Social  GitHub LinkedIn  </description>
-    </item>
-    
-    <item>
       <title>Poly Image Plane - ZLOC Part 1</title>
-      <link>/posts/20200131_poly_image_plane_zloc_part1/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0900</pubDate>
+      <link>/posts/20191214_poly_image_plane_zloc_part1/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0900</pubDate>
       
-      <guid>/posts/20200131_poly_image_plane_zloc_part1/</guid>
+      <guid>/posts/20191214_poly_image_plane_zloc_part1/</guid>
       <description>An Image Plane is just a “Reflection” of a camera’s Film Back.
     We can figure out the Image Plane’s width and height by using some simple math.
     Lets make a Poly Image Plane by using this formula.   First, create a camera. We will be using it’s default settings.
   Focal Length(mm): 35 Horizontal Film Aperture(inch): 1.417 Vertical Film Aperture(inch): 0.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 11 Jan 1991 00:00:00 +0900</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Matchmove Reel   Social  GitHub LinkedIn  </description>
     </item>
     
   </channel>

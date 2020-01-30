@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.62.2" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2.5D Locator - ZLOC Part 2 &middot; Hyuk Ko</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="/"><h1>Hyuk Ko</h1></a>
+      <p class="lead">
+       Matchmove Artist 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="/">Home</a> </li>
+        <li><a href="/about/"> About </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>2.5D Locator - ZLOC Part 2</h1>
+  <time datetime=2019-12-15T00:00:00&#43;0900 class="post-date">Sun, Dec 15, 2019</time>
+  <ul>
+<li>Let’s pick up from where we left off. We have used some fancy expressions to create an image plane. But if we tweak this expression just a little bit we can create a 2.5D Locator from scratch!
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//zloc_intro.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="first-lets-edit-the-expression">First let’s edit the expression.</h2>
+<ul>
+<li>
+<p>Instead of manipulating the ScaleX and ScaleY attributes, pipe the same formula to the TranslateX and TranslateY attributes like this…</p>
+<ul>
+<li>
+<pre><code>[Before]
+pPlane1.sx = cameraShape1.hfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1;
+pPlane1.sy = cameraShape1.vfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1;
+
+[After]
+pPlane1.tx = cameraShape1.hfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1;
+pPlane1.ty = cameraShape1.vfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1;
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>The Poly Plane moved to the image plane’s upper-right hand side.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//zloc_expression_fix.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<p>Let’s see what happens if we multiply “0.5” on each expression like this…</p>
+<ul>
+<li>
+<pre><code>pPlane1.tx = cameraShape1.hfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1 * 0.5;
+pPlane1.ty = cameraShape1.vfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1 * 0.5;
+</code></pre></li>
+<li>The Poly Plane’s pivot sits right on top of image plane’s top right-hand corner!
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//zloc_uv_pos_0_5.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Now let’s see what happens if we multiply “-0.5” on each expression like this…</p>
+<ul>
+<li>
+<pre><code>pPlane1.tx = cameraShape1.hfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1 * -0.5;
+pPlane1.ty = cameraShape1.vfa * 2.54 * pPlane1.tz / (cameraShape1.fl / 10) * -1 * -0.5;
+</code></pre></li>
+<li>This time, the Poly Plane’s pivot sits right on top of image plane’s bottom left-hand corner!
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//zloc_uv_neg_0_5.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>If you keep on punching in numbers you will see a pattern something like this…</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//zloc_uv_chart.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<p>And here’s the new formula! It’s basically the same formula as before(Poly Image Plane), just with additional “U” &amp; “V” factors.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//25d_formula_fix.png" alt=""></p>
+</blockquote>
+</li>
+<li>
+<p>Enough with the talking. Let’s go create a 2.5D Locator!</p>
+</li>
+<li>
+<p>First create a locator and add attributes named “U” and “V”. Move the locator by -35 in the Z Axis.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//25d_add_uv_attr.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="next-up-expressions">Next up, Expressions!</h2>
+<ul>
+<li>
+<p>Open the Expression Editor, copy and paste the code below, and hit the create button.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//25d_expression.png" alt=""><!-- raw HTML omitted --></p>
+</blockquote>
+<ul>
+<li>
+<pre><code>locator1.tx = cameraShape1.hfa * 2.54 * locator1.tz / (cameraShape1.fl / 10) * -1 * locator1.U;
+locator1.ty = cameraShape1.vfa * 2.54 * locator1.tz / (cameraShape1.fl / 10) * -1 * locator1.V;
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>We can now move the 2.5D Locator by adjusting the U &amp; V attributes, and the TranslateZ will control the “Depth”.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//25d_tz_static_dynamic_optimized.gif" alt=""><!-- raw HTML omitted --></p>
+</blockquote>
+</li>
+<li>
+<p>The really interesting thing about this expression is that the 2.5D Locator can hold it’s screen space position no matter what you do to the Focal Length attribute! This can really come in handy when you are doing “one-point” tracking or even layout work.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//25d_tz_dynamic_fl_dynamic_optimized.gif" alt=""><!-- raw HTML omitted --></p>
+</blockquote>
+</li>
+<li>
+<p>We’ve figured out the Maya side, now it’s just a matter of figuring out how to write out “-0.5 to 0.5 U &amp; V coordinates” from the Matchmove Softwares such as 3DEqualizer, Syntheyes, PFTrack and etc.</p>
+</li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>
