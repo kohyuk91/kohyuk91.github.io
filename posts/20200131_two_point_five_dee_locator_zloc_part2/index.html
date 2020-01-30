@@ -148,9 +148,15 @@ locator1.ty = cameraShape1.vfa * 2.54 * locator1.tz / (cameraShape1.fl / 10) * -
 </code></pre></li>
 <li>
 <p>We can now move the 2.5D Locator by adjusting the U &amp; V attributes, and the TranslateZ will control the “Depth”.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//25d_tz_static_dynamic_optimized.gif" alt=""><!-- raw HTML omitted --></p>
+</blockquote>
 </li>
 <li>
 <p>The really interesting thing about this expression is that the 2.5D Locator can hold it’s screen space position no matter what you do to the Focal Length attribute! This can really come in handy when you are doing “one-point” tracking or even layout work.</p>
+<blockquote>
+<p><img src="/images/20200131_two_point_five_dee_locator_zloc_part2//25d_tz_dynamic_fl_dynamic_optimized.gif" alt=""><!-- raw HTML omitted --></p>
+</blockquote>
 </li>
 <li>
 <p>We’ve figured out the Maya side, now it’s just a matter of figuring out how to write out “-0.5 to 0.5 U &amp; V coordinates” from the Matchmove Softwares such as 3DEqualizer, Syntheyes, PFTrack and etc.</p>
