@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Hyuk Ko</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Dec 2019 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FFmpeg Screen Capture - CentOS7</title>
+      <link>/posts/20200211_ffmpeg_screen_capture_centos7/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
+      
+      <guid>/posts/20200211_ffmpeg_screen_capture_centos7/</guid>
+      <description>No Audio With Audio  And if you want the Poly Plane to follow the camera’s translations, just group the Poly Plane, and parent constraint the group to the camera.     </description>
+    </item>
     
     <item>
       <title>2.5D Locator - ZLOC Part 2</title>
