@@ -53,15 +53,10 @@
   <h1>FFmpeg Screen Capture - CentOS7</h1>
   <time datetime=2020-02-11T00:00:00&#43;0900 class="post-date">Tue, Feb 11, 2020</time>
   <h2 id="no-audio">No Audio</h2>
-<h2 id="with-audio">With Audio</h2>
-<ul>
-<li>And if you want the Poly Plane to follow the camera’s translations, just group the Poly Plane, and parent constraint the group to the camera.
-<blockquote>
-<p><img src="/images/20200131_poly_image_plane_zloc_part1/poly_image_plane_maya_expression_result_parentconstraint.png" alt=""></p>
-</blockquote>
-</li>
-</ul>
-
+<pre><code>ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
+</code></pre><h2 id="with-audio">With Audio</h2>
+<pre><code>ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -f alsa -ac 2 -i hw:2,0 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
+</code></pre>
 </div>
 
 

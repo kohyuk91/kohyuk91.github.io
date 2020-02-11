@@ -56,7 +56,7 @@
     <a href="/posts/20200211_ffmpeg_screen_capture_centos7/">FFmpeg Screen Capture - CentOS7</a>
   </h1>
   <time datetime="2020-02-11T00:00:00&#43;0900" class="post-date">Tue, Feb 11, 2020</time>
-  No Audio With Audio  And if you want the Poly Plane to follow the camera’s translations, just group the Poly Plane, and parent constraint the group to the camera.     
+  No Audio ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 With Audio ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -f alsa -ac 2 -i hw:2,0 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 
   
 </article><article class="post">
   <h1 class="post-title">
