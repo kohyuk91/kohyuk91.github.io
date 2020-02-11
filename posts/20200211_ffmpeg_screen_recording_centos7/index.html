@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Posts &middot; Hyuk Ko</title>
+  <title>FFmpeg Screen Recording - CentOS7 &middot; Hyuk Ko</title>
   <meta name="description" content="" />
 
   
@@ -24,7 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Hyuk Ko" />
   
 </head>
 
@@ -50,15 +49,35 @@
 </aside>
 
     <main class="content container">
-    <ul class="posts">
+    <div class="post">
+  <h1>FFmpeg Screen Recording - CentOS7</h1>
+  <time datetime=2020-02-11T00:00:00&#43;0900 class="post-date">Tue, Feb 11, 2020</time>
+  <h2 id="no-audio">No Audio</h2>
+<pre><code>ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
+</code></pre><h2 id="with-audio">With Audio</h2>
+<pre><code>ffmpeg -f alsa -ac 2 -i hw:2,0 -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
+</code></pre><h3 id="find-audio">Find Audio</h3>
+<ul>
 <li>
-    <span><a href="/posts/20200211_ffmpeg_screen_recording_centos7/">FFmpeg Screen Recording - CentOS7</a> <time class="pull-right post-list" datetime="2020-02-11T00:00:00&#43;0900">Tue, Feb 11, 2020</time></span>
-  </li><li>
-    <span><a href="/posts/20191215_two_point_five_dee_locator_zloc_part2/">2.5D Locator - ZLOC Part 2</a> <time class="pull-right post-list" datetime="2019-12-15T00:00:00&#43;0900">Sun, Dec 15, 2019</time></span>
-  </li><li>
-    <span><a href="/posts/20191214_poly_image_plane_zloc_part1/">Poly Image Plane - ZLOC Part 1</a> <time class="pull-right post-list" datetime="2019-12-14T00:00:00&#43;0900">Sat, Dec 14, 2019</time></span>
-  </li>
+<pre><code>$ aplay -l
+</code></pre></li>
+<li>
+<pre><code>card 0: PCH [HDA Intel PCH], device 0: ALC1150 Analog [ALC1150 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+.
+..
+...
+card 2: Microphone [Yeti Stereo Microphone], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+</code></pre></li>
+<li><code>card 2</code>,<code>device 0</code> &raquo; <code>-i hw:2,0</code></li>
 </ul>
+
+</div>
+
+
     </main>
 
     

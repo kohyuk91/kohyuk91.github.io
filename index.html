@@ -53,10 +53,10 @@
     <div class="posts">
 <article class="post">
   <h1 class="post-title">
-    <a href="/posts/20200211_ffmpeg_screen_capture_centos7/">FFmpeg Screen Capture - CentOS7</a>
+    <a href="/posts/20200211_ffmpeg_screen_recording_centos7/">FFmpeg Screen Recording - CentOS7</a>
   </h1>
   <time datetime="2020-02-11T00:00:00&#43;0900" class="post-date">Tue, Feb 11, 2020</time>
-  No Audio ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 With Audio ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -f alsa -ac 2 -i hw:2,0 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 
+  No Audio ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 With Audio ffmpeg -f alsa -ac 2 -i hw:2,0 -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 Find Audio   $ aplay -l   card 0: PCH [HDA Intel PCH], device 0: ALC1150 Analog [ALC1150 Analog] Subdevices: 1/1 Subdevice #0: subdevice #0 . .. ... card 2: Microphone [Yeti Stereo Microphone], device 0: USB Audio [USB Audio] Subdevices: 1/1 Subdevice #0: subdevice #0  card 2,device 0 &raquo; -i hw:2,0  
   
 </article><article class="post">
   <h1 class="post-title">
