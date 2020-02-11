@@ -17,7 +17,7 @@
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
       
       <guid>/posts/20200211_ffmpeg_screen_recording_centos7/</guid>
-      <description>No Audio ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 With Audio ffmpeg -f alsa -ac 2 -i hw:2,0 -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 Find Audio   $ aplay -l   card 0: PCH [HDA Intel PCH], device 0: ALC1150 Analog [ALC1150 Analog] Subdevices: 1/1 Subdevice #0: subdevice #0 . .. ... card 2: Microphone [Yeti Stereo Microphone], device 0: USB Audio [USB Audio] Subdevices: 1/1 Subdevice #0: subdevice #0  card 2,device 0 &amp;raquo; -i hw:2,0  </description>
+      <description>No Audio $ ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4 With Audio $ ffmpeg -f alsa -ac 2 -i hw:2,0 -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4  Find Audio   $ aplay -l   card 0: PCH [HDA Intel PCH], device 0: ALC1150 Analog [ALC1150 Analog] Subdevices: 1/1 Subdevice #0: subdevice #0 .</description>
     </item>
     
     <item>

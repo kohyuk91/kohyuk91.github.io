@@ -53,10 +53,11 @@
   <h1>FFmpeg Screen Recording - CentOS7</h1>
   <time datetime=2020-02-11T00:00:00&#43;0900 class="post-date">Tue, Feb 11, 2020</time>
   <h2 id="no-audio">No Audio</h2>
-<pre><code>ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
+<pre><code>$ ffmpeg -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
 </code></pre><h2 id="with-audio">With Audio</h2>
-<pre><code>ffmpeg -f alsa -ac 2 -i hw:2,0 -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
-</code></pre><h3 id="find-audio">Find Audio</h3>
+<pre><code>$ ffmpeg -f alsa -ac 2 -i hw:2,0 -framerate 30 -s 1920x1080 -f x11grab -i :0.0 -c:v libx264 -pix_fmt yuv420p ~/desktop_$(date +%Y%m%dT%H%M%S).mp4
+</code></pre><hr>
+<h2 id="find-audio">Find Audio</h2>
 <ul>
 <li>
 <pre><code>$ aplay -l
