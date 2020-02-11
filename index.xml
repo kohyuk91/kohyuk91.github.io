@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>ZLOC Dev History</title>
+      <link>/posts/20200131_zloc_dev_history/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0900</pubDate>
+      
+      <guid>/posts/20200131_zloc_dev_history/</guid>
+      <description>ZLOC Problem  일반적인 매치무브 작업은 열심히 점찍고 솔브하면 결과가 뚝딱 나오지만, 난이도가 있는 샷들은 이렇게 간단하게 해결되지 않음&amp;hellip; 이런 어려운 샷들을 트래킹하기 위해 매치무버들 사이에서 많이 쓰이고 있는 테크닉이 &amp;lsquo;원포인트 트래킹&amp;rsquo; &amp;lsquo;원포인트 트래킹&#39;을 하기 위해서 일단 3DEqualizer의 2D 트래커를 마야에서 사용할 수 있는 2.5D 로케이터로 뽑아주는 스크립트가 필요했음 Synthpipe라는 Syntheyes와 Maya를 Bridge하는 스크립트를 찾았음. 솔루션을 찾아서 급한 불은 껐지만, 문제는 여기서 부터임&amp;hellip;  당시 메인으로 사용하고 있는 프로그램이 3DEqualizer라서 Synthpipe를 사용하기 위해서 3DEqualizer에서 뽑은 2D 트래커를 tracksperanto라는 트래커 변환툴을 통해 Syntheyes 포맷으로 변환해야 했음.</description>
+    </item>
+    
+    <item>
       <title>2.5D Locator - ZLOC Part 2</title>
       <link>/posts/20191215_two_point_five_dee_locator_zloc_part2/</link>
       <pubDate>Sun, 15 Dec 2019 00:00:00 +0900</pubDate>
@@ -49,7 +58,7 @@
       
       <guid>/projects/</guid>
       <description>Python ZLOC ZLOC is a 2.5D tracker system built for Science-D-Visions 3DEqualizer and Autodesk Maya. (Based on SynthPipe by Martin Kulig)
-  Source Code &amp;amp; Documentation (GitHub)  ZRAY ZRay is a simple Ray-Mesh intersect tool. I focused on making it as simple and intuitive as possible. Originally made for matchmove purposes, but it can be used in many situations.
+  Source Code &amp;amp; Documentation (GitHub) Dev History  ZRAY ZRay is a simple Ray-Mesh intersect tool. I focused on making it as simple and intuitive as possible. Originally made for matchmove purposes, but it can be used in many situations.
   Time Warp  Time warps the scene by comparing &amp;ldquo;original&amp;rdquo; and &amp;ldquo;timewarped&amp;rdquo; image sequence.</description>
     </item>
     
