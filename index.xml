@@ -21,6 +21,16 @@
     </item>
     
     <item>
+      <title>Random</title>
+      <link>/random/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0900</pubDate>
+      
+      <guid>/random/</guid>
+      <description>2020-02-13  Based on Entagma tutorial
+ </description>
+    </item>
+    
+    <item>
       <title>ZLOC Dev History</title>
       <link>/posts/20200131_zloc_dev_history/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0900</pubDate>
