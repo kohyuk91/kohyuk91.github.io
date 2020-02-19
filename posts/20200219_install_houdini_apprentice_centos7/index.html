@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.62.2" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Install Houdini Apprentice - CentOS7 &middot; Hyuk Ko</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="/"><h1>Hyuk Ko</h1></a>
+      <p class="lead">
+       VFX Artist 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="/">Home</a> </li>
+        <li><a href="/about/"> About </a></li><li><a href="/projects/"> Projects </a></li><li><a href="/random/"> Random </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Install Houdini Apprentice - CentOS7</h1>
+  <time datetime=2020-02-19T00:00:00&#43;0900 class="post-date">Wed, Feb 19, 2020</time>
+  <h2 id="download-houdini">Download Houdini</h2>
+<h2 id="install-houdinihttpswwwsidefxcomfaqquestion3"><a href="https://www.sidefx.com/faq/question/3/">Install Houdini</a></h2>
+<ol>
+<li>Open a terminal.</li>
+<li>Unpack the downloaded tar.gz archive. For example,
+<ul>
+<li>
+<pre><code>$ tar -xvzf houdini-17.5.229-linux_x86_64_gcc6.3.tar.gz
+</code></pre></li>
+</ul>
+</li>
+<li>Run the <code>houdini.install</code> script:
+<ul>
+<li>
+<pre><code>$ cd houdini-17.5.229-linux_x86_64_gcc6.3/
+$ su
+# ./houdini.install
+</code></pre></li>
+<li><a href="https://www.sidefx.com/faq/question/439/">Install details</a></li>
+</ul>
+</li>
+<li>The licensing menu will appear during the installation process if no installed licenses can be detected
+<ul>
+<li>If you are installing Apprentice or Indie, choose Apprentice Licensing. This will take out the complexities of running a local license server.</li>
+</ul>
+</li>
+<li>Error!!!
+<ul>
+<li>localhost.localdomain 어쩌구 저쩌구</li>
+</ul>
+</li>
+</ol>
+<h2 id="애러-해결">애러 해결</h2>
+<ul>
+<li>Hostname이 localhost.localdomain 인것이 원인. Hostname을 유저 이름으로 바꿔주면 된다.</li>
+</ul>
+<ol>
+<li>터미널 열기
+<ul>
+<li>
+<pre><code>&lt;유저이름 확인&gt;
+$ echo $USER
+ex) hko
+</code></pre></li>
+<li>
+<pre><code>&lt;Hostname 변경하기&gt;
+$ su
+# hostnamectl set-hostname &lt;새로운 호스트네임==유저이름&gt;
+ex) # hostnamectl set-hostname hko
+</code></pre></li>
+<li>
+<pre><code>&lt;변경사항 확인&gt;
+$ su
+# hostname
+ex) hko
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<h2 id="houdini-license-administrator">Houdini License Administrator</h2>
+<ol>
+<li>Houdini License Administrator 실행
+<ol>
+<li>프로그램 &gt; Side Effects Software &raquo; License Administrator&hellip;</li>
+</ol>
+</li>
+<li>License Server 변경하기
+<ol>
+<li>File &raquo; Change License Server</li>
+<li>License Server Host: &lt;바뀐 Hostname&gt; ex)hko</li>
+<li>Accept</li>
+</ol>
+</li>
+<li>라이센스 키 생성하기
+<ol>
+<li>SideFX 로그인<a href="https://www.sidefx.com">(https://www.sidefx.com)</a></li>
+<li><a href="https://www.sidefx.com/services/non-commercial-license/">Non-commercial License for Houdini</a> 들어가기
+<ol>
+<li>Please choose the non-commercial product: Houdini FX (Non-Commercial)</li>
+<li>Server name: &lt;바뀐 Hostname&gt; ex)hko</li>
+<li>Server code: &lt;Houdini License Administrator에서 확인 / Server Information 탭&gt;</li>
+<li>Generate License</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>라이센스 키 입력하기
+<ol>
+<li>생성된 키들 하나씩 복붙
+<ul>
+<li>SERVER &hellip;</li>
+<li>LICENSE &hellip;</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="alias-설정">alias 설정</h2>
+<ol>
+<li><code>init.env</code>에 alias 추가
+<ul>
+<li>
+<pre><code>alias houdini=&quot;cd /opt/hfs18.0 &amp;&amp; source houdini_setup &amp;&amp; houdini&quot;
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<h2 id="houdini-실행">Houdini 실행</h2>
+<ol>
+<li>터미널 열기
+<ul>
+<li>
+<pre><code>$ houdini
+</code></pre></li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

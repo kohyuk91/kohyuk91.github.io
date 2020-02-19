@@ -6,10 +6,19 @@
     <description>Recent content on Hyuk Ko</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install Houdini Apprentice - CentOS7</title>
+      <link>/posts/20200219_install_houdini_apprentice_centos7/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0900</pubDate>
+      
+      <guid>/posts/20200219_install_houdini_apprentice_centos7/</guid>
+      <description>Download Houdini Install Houdini  Open a terminal. Unpack the downloaded tar.gz archive. For example,   $ tar -xvzf houdini-17.5.229-linux_x86_64_gcc6.3.tar.gz    Run the houdini.install script:   $ cd houdini-17.5.229-linux_x86_64_gcc6.3/ $ su # ./houdini.install  Install details   The licensing menu will appear during the installation process if no installed licenses can be detected  If you are installing Apprentice or Indie, choose Apprentice Licensing. This will take out the complexities of running a local license server.</description>
+    </item>
     
     <item>
       <title>FFmpeg Screen Recording - CentOS7</title>
